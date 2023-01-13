@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="design.springboot.zjj.mapper.SysLogMapper">
+
+   <insert id="addLog" parameterType="design.springboot.zjj.entity.Syslog">
+        insert into syslog(id, username, operation, method, createDate)
+        values (#{id}, #{username}, #{operation}, #{method}, #{createDate})
+    </insert>
+
+    <select id="getAllLog" resultType="design.springboot.zjj.entity.Syslog">
+        select * from syslog order by createDate desc
+    </select>
+
+    <select id="getLogByLike" resultType="design.springboot.zjj.entity.Syslog">
+        select * from syslog where username like '%${name}%' order by createDate desc
+    </select>
+
+</mapper>

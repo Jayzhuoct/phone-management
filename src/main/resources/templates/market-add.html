@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>添加手机型号</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="container mt-3">
+  <form th:action="@{/market-add}" method="post">
+    <div class="form-floating mb-3 mt-3">
+      <input type="text" class="form-control" id="p_name" placeholder="手机名称" name="pName">
+      <label for="p_name">手机名称</label>
+    </div>
+    <div class="form-floating mt-3 mb-3">
+      <input type="text" class="form-control" id="p_model" placeholder="手机型号" name="pModel">
+      <label for="p_model">手机型号</label>
+    </div>
+    <div class="form-floating mb-3 mt-3">
+      <input type="text" class="form-control" id="p_bid" placeholder="手机进价" name="pBid">
+      <label for="p_bid">手机进价</label>
+    </div>
+    <div class="form-floating mt-3 mb-3">
+      <input type="text" class="form-control" id="p_price" placeholder="手机售价" name="pPrice">
+      <label for="p_price">手机售价</label>
+    </div>
+    <div class="form-floating mb-3 mt-3">
+      <input type="text" class="form-control" id="p_sales" placeholder="手机销量" name="pSales">
+      <label for="p_sales">手机销量</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">添加</button>
+    <button type="reset" class="btn btn-secondary">重置</button>
+  </form>
+</div>
+
+</body>
+</html>

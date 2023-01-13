@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>修改手机库存</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="container mt-3">
+  <form th:action="@{/repertory-edit}" method="post">
+    <div class="form-floating mb-3 mt-3">
+      <input type="text" class="form-control" id="p_name" placeholder="手机名称" name="pName" th:value="${repertory.pName}">
+      <label for="p_name">手机名称</label>
+    </div>
+    <div class="form-floating mt-3 mb-3">
+      <input type="text" class="form-control" id="p_model" placeholder="手机型号" name="pModel" th:value="${repertory.pModel}">
+      <label for="p_model">手机型号</label>
+    </div>
+    <div class="form-floating mb-3 mt-3">
+      <input type="text" class="form-control" id="p_enter" placeholder="手机进货量" name="pEnter" th:value="${repertory.pEnter}">
+      <label for="p_enter">手机进货量</label>
+    </div>
+    <div class="form-floating mt-3 mb-3">
+      <input type="text" class="form-control" id="p_out" placeholder="手机出货量" name="pOut" th:value="${repertory.pOut}">
+      <label for="p_out">手机出货量</label>
+    </div>
+    <div class="form-floating mb-3 mt-3">
+      <input type="text" class="form-control" id="p_stock" placeholder="手机库存量" name="pStock" th:value="${repertory.pStock}">
+      <label for="p_stock">手机库存量</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">修改</button>
+    <button type="reset" class="btn btn-secondary">重置</button>
+  </form>
+</div>
+
+</body>
+</html>

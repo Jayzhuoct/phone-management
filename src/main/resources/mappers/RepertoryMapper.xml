@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="design.springboot.zjj.mapper.RepertoryMapper">
+<select id="getRepertoryByLike" resultType="design.springboot.zjj.entity.Repertory">
+    select * from repertory where pName like '%${name}%'
+</select>
+<insert id="insertRepertories" parameterType="design.springboot.zjj.entity.Repertory">
+    insert into repertory(
+                    pName,
+                    pModel,
+                    pEnter,
+                    pOut,
+                    pStock)
+    values
+    <foreach collection="list" item="item" index= "index" separator =",">
+            (
+            #{item.pName},
+            #{item.pModel},
+            #{item.pEnter},
+            #{item.pOut},
+            #{item.pStock}
+            )
+    </foreach>
+</insert>
+</mapper>

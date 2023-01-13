@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="design.springboot.zjj.mapper.MarketMapper">
+<select id="getMarketByLike" resultType="design.springboot.zjj.entity.Market">
+    select * from market where pName like '%${name}%'
+</select>
+
+<insert id="insertMarkets" parameterType="design.springboot.zjj.entity.Market">
+    insert into market(
+                    pName,
+                    pModel,
+                    pBid,
+                    pPrice,
+                    pSales)
+    values
+    <foreach collection="list" item="item" index= "index" separator =",">
+            (
+            #{item.pName},
+            #{item.pModel},
+            #{item.pBid},
+            #{item.pPrice},
+            #{item.pSales}
+            )
+    </foreach>
+</insert>
+</mapper>

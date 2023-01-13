@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>手机销售后台管理系统</title>
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+    <link rel="stylesheet" th:href="@{/css/font.css}">
+	<link rel="stylesheet" th:href="@{/css/xadmin.css}">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script th:src="@{/lib/layui/layui.js}" charset="utf-8"></script>
+    <script type="text/javascript" th:src="@{/js/xadmin.js}"></script>
+
+</head>
+<body>
+    <!-- 顶部开始 -->
+    <div class="container">
+        <div class="logo"><a href="./admin.html">手机销售后台管理系统</a></div>
+        <div class="left_open">
+            <i title="展开左侧栏" class="iconfont">&#xe699;</i>
+        </div>
+        <ul class="layui-nav right" lay-filter="">
+          <li class="layui-nav-item">
+            <a href="javascript:;">[[${name}]]</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+              <dd><a th:href="@{/out}">退出</a></dd>
+            </dl>
+          </li>
+        </ul>
+        
+    </div>
+    <!-- 顶部结束 -->
+    <!-- 中部开始 -->
+     <!-- 左侧菜单开始 -->
+    <div class="left-nav">
+      <div id="side-nav">
+        <ul id="nav">
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont">&#xe723;</i>
+                    <cite>手机管理</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a th:href="@{/typelist(page=1)}" th:target="main">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>手机型号</cite>
+                        </a>
+                    </li >
+                    <li>
+                        <a th:href="@{/marketlist(page=1)}" th:target="main">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>手机销售</cite>
+                        </a>
+                    </li >
+                    <li>
+                        <a th:href="@{/repertorylist(page=1)}" th:target="main">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>手机库存</cite>
+                        </a>
+                    </li >
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont">&#xe6ce;</i>
+                    <cite>文件管理</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a th:href="@{/download}" th:target="main">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>下载管理</cite>
+                        </a>
+                    </li >
+                    <li>
+                        <a th:href="@{/up}" th:target="main">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>上传管理</cite>
+                        </a>
+                    </li >
+                </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 左侧菜单结束 -->
+    <!-- 右侧主体开始 -->
+    <iframe th:src="@{/welcome}" name="main" style="background: white;width: 2000px;height:900px;" frameborder="0"></iframe>
+    <div class="footer">
+        <div class="copyright">Copyright ©2022 手机销售后台管理系统 @朱俊杰 20204071102</div>
+    </div> 
+</body>
+</html>
